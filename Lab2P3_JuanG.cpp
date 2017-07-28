@@ -15,6 +15,10 @@ double Grados(double);
 double anguloC(double,double);
 int ladoc(double,double,int);
 double area(double,double,double);
+double alturaA(double, double, double);
+double alturaB(double, double, double);
+double alturaC(double, double, double);
+
 int main(){
 	int continuar = 0;
 	while(continuar == 0){
@@ -92,6 +96,16 @@ int main(){
 					double Area;
 					Area = area(ladoa,ladob,tercerlado);
 					cout<<"El area es: "<<Area<<endl;
+					//alturas
+					double altura1;
+					double altura2;
+					double altura3;
+					altura1 = alturaA(ladoa,ladob,tercerlado);
+					altura2 = alturaB(ladoa,ladob,tercerlado);
+					altura3 = alturaC(ladoa,ladob,tercerlado);
+					cout<<"La altura a es: "<<altura1<<endl;
+					cout<<"La altura b es: "<<altura2<<endl;
+					cout<<"La altura c es: "<<altura3<<endl;
 				break;
 			case 4:
 				continuar = 1;
@@ -109,7 +123,7 @@ int menu(){
 	cout<<"1. Ejercicio 1"<<endl;
 	cout<<"2. Ejercicio 2"<<endl;
 	cout<<"3. Ejercicio 3"<<endl;
-	cout<<"4. salir"<<endl;
+	cout<<"4. Salir"<<endl;
 	cin>>salida;
 	return salida;
 }
@@ -203,3 +217,21 @@ double area(double ladoa, double ladob, double ladoc){
 	return sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
 }
 
+double alturaA(double la, double lb, double lc){
+	double semip;
+	semip = (la+lb+lc)/2;
+	return (2/la)*sqrt((semip*(semip-la)*(semip-lb)*(semip-lc)));
+}
+
+double alturaB(double ladoa, double ladob, double ladoc){
+	double semip;
+	semip = (ladoa+ladob+ladoc)/2;
+	return  (2/ladob)*sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
+}
+
+double alturaC(double ladoa, double ladob, double ladoc){
+	double semip;
+	semip = (ladoa+ladob+ladoc)/2;
+	return  (2/ladoc)*sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
+
+}
