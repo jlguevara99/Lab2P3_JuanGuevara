@@ -1,9 +1,12 @@
 #include<iostream>
 #include <stdio.h> 
-#include <math.h> 
+#include <math.h>
+#define PI 3.14159265
 using namespace std;
 int menu();
 float ejercicio1(float,float,float,float);
+double secuenciaseno(double);
+double radianes(double);
 
 
 
@@ -31,6 +34,20 @@ int main(){
 				cout<<"La respuesta es: "<<respuesta<<endl;
 				break;
 			case 2:
+				int opcion2;
+				cout<<"Ingrese la opcion [1. seno/2. coseno]"<<endl;
+				cin>>opcion2;
+				double grados;
+				cout<<"Ingrese los grados:";
+				cin>>grados;
+				double convertido;
+				convertido = radianes(grados);
+				if(opcion2 == 1){
+					double senoRespuesta;
+					
+				}else{
+					
+				}
 				break;
 			case 3:
 				break;
@@ -71,7 +88,15 @@ float ejercicio1(float x1, float x2, float y1, float y2){
 	return total;
 }
 
+double ejercicio2(double grado){
+	
+}
 
+double radianes(double grado){
+	double resultado;
+	resultado = sin(grado*PI/180);
+	return resultado;
+}
 
 
 
