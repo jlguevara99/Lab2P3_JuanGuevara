@@ -44,10 +44,10 @@ int main(){
 				cin>>grados;
 				double convertido;
 				convertido = radianes(grados);
-				cout<<"r: "<<convertido;
 				if(opcion2 == 1){
 					double senoRespuesta;
-					
+					senoRespuesta = secuenciaseno(convertido);
+					cout<<"La respuesta es: "<<senoRespuesta<<endl;
 				}else{
 					
 				}
@@ -93,11 +93,18 @@ float ejercicio1(float x1, float x2, float y1, float y2){
 
 double secuenciaseno(double grado){
 	double respuesta=0;
-	for(int i = 0; i < 14; i++) {
+	for(int i = 0; i < 17; i++) {
 		double numerador;
 		numerador = pow(-1,i);
-
+		double suma;
+		suma = (2*i)+1;
+		int denominador;
+		denominador = factorial(suma);
+		double division;
+		division = numerador/denominador;
+		respuesta += division; 
 	}
+	return respuesta;
 }
 
 double radianes(double grado){
