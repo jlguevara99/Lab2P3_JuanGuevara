@@ -10,8 +10,9 @@ double secuenciacoseno(double);
 double radianes(double);
 double radianes2(double);
 int factorial(int);
-
-
+double angulob(double,int,int);
+double Grados(double);
+double anguloC(double,double);
 
 int main(){
 	int continuar = 0;
@@ -56,6 +57,27 @@ int main(){
 				}
 				break;
 			case 3:
+					double ladoa;
+					double ladob;
+					double anguloA;
+					cout<<"Ingrese el lado a: "<<endl;
+					cin>>ladoa;
+					cout<<"Ingrese el lado b: "<<endl;
+					cin>>ladob;
+					cout<<"Ingrese el angulo: "<<endl;
+					cin>>anguloA;
+					double Aradianes;
+					Aradianes = radianes(anguloA);
+					//Sacar el angulo B
+					double anguloB;
+					anguloB = angulob(Aradianes,ladoa,ladob);
+					double desconversion;
+					desconversion = Grados(anguloB);
+					//sacar
+					cout<<"El angulo A es: "<<anguloA<<endl;
+					cout<<"El angulo B es: "<<desconversion<<endl;
+					cout<<"El angulo C es: "<<anguloC(desconversion,anguloA)<<endl;
+					
 				break;
 			case 4:
 				continuar = 1;
@@ -135,6 +157,20 @@ int factorial(int numero){
 	return acumulador;
 }
 
+double angulob(double grado,int ladoa, int ladob){
+	double senoa;
+	senoa = secuenciaseno(grado);
+	return asin((ladob*senoa)/ladoa);
 
+}
 
+double Grados(double radian){
+	double resultado;
+	resultado = (radian*180/PI);
+	return resultado;
+}
 
+double anguloC(double anguloA, double anguloB){
+	return 180-(anguloA+anguloB); 
+
+}
