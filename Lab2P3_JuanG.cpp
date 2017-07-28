@@ -6,6 +6,7 @@ using namespace std;
 int menu();
 float ejercicio1(float,float,float,float);
 double secuenciaseno(double);
+double secuenciacoseno(double);
 double radianes(double);
 double radianes2(double);
 int factorial(int);
@@ -49,7 +50,9 @@ int main(){
 					senoRespuesta = secuenciaseno(convertido);
 					cout<<"La respuesta es: "<<senoRespuesta<<endl;
 				}else{
-					
+					double cosenoRespuesta;
+					cosenoRespuesta = secuenciacoseno(convertido);
+					cout<<"La respuesta es: "<<cosenoRespuesta<<endl;
 				}
 				break;
 			case 3:
@@ -102,7 +105,18 @@ double secuenciaseno(double grado){
 		denominador = factorial(suma);
 		double division;
 		division = numerador/denominador;
-		respuesta += division; 
+		respuesta += division*pow(grado,(2*i)+1); 
+		
+	}
+	return respuesta;
+}
+
+double secuenciacoseno(double grado){
+	double respuesta = 0;
+	for(int i = 0; i < 17; i++) {
+		double denominador;
+		denominador = factorial(2*i);
+		respuesta +=((pow(-1,i))/denominador)*pow(grado,2*i);
 	}
 	return respuesta;
 }
