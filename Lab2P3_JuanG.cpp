@@ -7,6 +7,8 @@ int menu();
 float ejercicio1(float,float,float,float);
 double secuenciaseno(double);
 double radianes(double);
+double radianes2(double);
+int factorial(int);
 
 
 
@@ -42,6 +44,7 @@ int main(){
 				cin>>grados;
 				double convertido;
 				convertido = radianes(grados);
+				cout<<"r: "<<convertido;
 				if(opcion2 == 1){
 					double senoRespuesta;
 					
@@ -88,17 +91,28 @@ float ejercicio1(float x1, float x2, float y1, float y2){
 	return total;
 }
 
-double ejercicio2(double grado){
-	
+double secuenciaseno(double grado){
+	double respuesta=0;
+	for(int i = 0; i < 14; i++) {
+		double numerador;
+		numerador = pow(-1,i);
+
+	}
 }
 
 double radianes(double grado){
 	double resultado;
-	resultado = sin(grado*PI/180);
+	resultado = (grado*PI/180);
 	return resultado;
 }
 
-
+int factorial(int numero){
+	int acumulador = 1;
+	for(int i = 1; i <= numero; i++) {
+		acumulador*=i;
+	}
+	return acumulador;
+}
 
 
 
