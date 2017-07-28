@@ -13,7 +13,8 @@ int factorial(int);
 double angulob(double,int,int);
 double Grados(double);
 double anguloC(double,double);
-
+int ladoc(double,double,int);
+double area(double,double,double);
 int main(){
 	int continuar = 0;
 	while(continuar == 0){
@@ -73,11 +74,24 @@ int main(){
 					anguloB = angulob(Aradianes,ladoa,ladob);
 					double desconversion;
 					desconversion = Grados(anguloB);
-					//sacar
+					//
 					cout<<"El angulo A es: "<<anguloA<<endl;
 					cout<<"El angulo B es: "<<desconversion<<endl;
 					cout<<"El angulo C es: "<<anguloC(desconversion,anguloA)<<endl;
-					
+					double anguloCradian;
+					double tercerlado;
+					double Cradianes;
+					anguloCradian = anguloC(desconversion,anguloA);
+					Cradianes = radianes(anguloCradian);
+					tercerlado = ladoc(Aradianes,Cradianes,ladoa);
+					//
+					cout<<"El lado a es: "<<ladoa<<endl;
+					cout<<"EL lado b es: "<<ladob<<endl;
+					cout<<"El lado c es: "<<tercerlado<<endl;
+					//area 
+					double Area;
+					Area = area(ladoa,ladob,tercerlado);
+					cout<<"El area es: "<<Area<<endl;
 				break;
 			case 4:
 				continuar = 1;
@@ -174,3 +188,18 @@ double anguloC(double anguloA, double anguloB){
 	return 180-(anguloA+anguloB); 
 
 }
+
+int ladoc(double anguloA, double anguloC, int ladoA){
+	double senoA;
+	double senoC;
+	senoA = secuenciaseno(anguloA);
+	senoC = secuenciaseno(anguloC);
+	return (senoC*ladoA)/senoA;
+}
+
+double area(double ladoa, double ladob, double ladoc){
+	double semip;
+	semip= (ladoa+ladob+ladoc)/2;
+	return sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
+}
+
