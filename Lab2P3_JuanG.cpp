@@ -217,10 +217,10 @@ double area(double ladoa, double ladob, double ladoc){
 	return sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
 }
 
-double alturaA(double la, double lb, double lc){
+double alturaA(double ladoa, double ladob, double ladoc){
 	double semip;
-	semip = (la+lb+lc)/2;
-	return (2/la)*sqrt((semip*(semip-la)*(semip-lb)*(semip-lc)));
+	semip = (ladoa+ladob+ladoc)/2;
+	return (2/ladoa)*sqrt((semip*(semip-ladoa)*(semip-ladob)*(semip-ladoc)));
 }
 
 double alturaB(double ladoa, double ladob, double ladoc){
